@@ -9,7 +9,7 @@ export default defineConfig({
       "/api": {
         target: "https://ecommerce-app-mern-10.onrender.com",
         changeOrigin: true,  // Ensures the host header is modified
-        secure: true,  // Set to false if the target has self-signed SSL
+        rewrite: (path)=>path.replace(/^\/api/,"/api"),
       },
     },
   },
